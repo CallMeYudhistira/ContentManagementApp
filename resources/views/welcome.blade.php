@@ -2,7 +2,7 @@
 @section('title', 'Login Page')
 @section('content')
     @if (session()->get('error'))
-        <p style="color: red;">{{ session()->get('error') }}</p>
+        <p style="color: red; background-color: #31272785; padding: 15px; border-radius: 12px; margin-bottom: 20px;">{{ session()->get('error') }}</p>
     @endif
 
     <form action="{{ route('auth.login') }}" method="POST">

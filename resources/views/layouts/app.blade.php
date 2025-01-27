@@ -36,7 +36,7 @@
 
                         <li class="nav-item">
                             <button class="btn btn-dark" aria-expanded="false">
-                                <a class="nav-link" href="">Logout</a>
+                                <a class="nav-link" href="{{ route('auth.logout') }}">Logout</a>
                             </button>
                     </ul>
                 </div>
