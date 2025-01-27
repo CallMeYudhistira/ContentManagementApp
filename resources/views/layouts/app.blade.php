@@ -10,6 +10,44 @@
 </head>
 
 <body style="background-color: white;">
+    @if (session()->get('isLogged'))
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link" href="#">Home</a>
+                            </button>
+                        </li>
+                        <li class="nav-item dropdown" style="margin-top: 3%;">
+                            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Konten
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Lihat Konten</a></li>
+                                @if(session()->get('role') == 'admin')
+                                <li><a class="dropdown-item" href="#">Buat Konten</a></li>
+                                <li><a class="dropdown-item" href="#">Kelola Konten</a></li>
+                                @endif
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="btn btn-dark" aria-expanded="false">
+                                <a class="nav-link" href="">Logout</a>
+                            </button>
+                    </ul>
+                </div>
+                
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    @endif
     <div class="container" style="margin-top: 4%;">
         @yield('content')
     </div>
