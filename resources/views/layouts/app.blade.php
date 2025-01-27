@@ -20,7 +20,7 @@
                                 <a class="nav-link" href="#">Home</a>
                             </button>
                         </li>
-                        <li class="nav-item dropdown" style="margin-top: 3%;">
+                        <li class="nav-item dropdown" style="margin-top: 2%;">
                             <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Konten

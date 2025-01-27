@@ -5,7 +5,7 @@
         <p style="color: red; background-color: #31272785; padding: 15px; border-radius: 12px; margin-bottom: 20px;">{{ session()->get('error') }}</p>
     @endif
 
-    <form action="{{ route('auth.login') }}" method="POST">
+    <form action="{{ route('auth.login') }}" method="POST" style="background-color: whitesmoke; padding: 25px; border-radius: 12px;">
         @csrf
         <h1 style="margin-top: -1%;">Login</h1>
 
