@@ -17,7 +17,7 @@
 
 <body style="background-color: white;">
     @if (session()->get('isLogged'))
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width: 1240px;">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                     <ul class="navbar-nav">
