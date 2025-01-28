@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Content | Dashboard')
+@section('title', 'Content | Update')
 @section('content')
     {{-- Ini Konten --}}
 @endsection

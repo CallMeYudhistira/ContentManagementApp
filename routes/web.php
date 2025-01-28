@@ -17,6 +17,7 @@ Route::get('/users', function(){
 Route::controller(ContentController::class)->prefix("content")->name("content.")->group(function(){
     Route::get("/", "index")->name("index");
     Route::get("/create","create")->name("create");
+    Route::get("/management", "show")->name("management");
     Route::get("/{id}/edit", "edit")->name("edit");
 
     Route::post("/", "store")->name("store");

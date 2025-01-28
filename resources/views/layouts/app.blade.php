@@ -7,6 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>@yield('title')</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
 
 <body style="background-color: white;">
@@ -16,11 +22,11 @@
                 <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <button class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a class="nav-link" href="#">Home</a>
+                            <button class="btn btn-dark">
+                                <a class="nav-link" href="{{ route('users.index') }}">Home</a>
                             </button>
                         </li>
-                        <li class="nav-item dropdown" style="margin-top: 2%;">
+                        <li class="nav-item dropdown" style="margin-top: 3%;">
                             <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Konten
@@ -29,7 +35,7 @@
                                 <li><a class="dropdown-item" href="{{ route('content.index') }}">Lihat Konten</a></li>
                                 @if(session()->get('role') == 'admin')
                                 <li><a class="dropdown-item" href="{{ route('content.create') }}">Buat Konten</a></li>
-                                <li><a class="dropdown-item" href="#">Kelola Konten</a></li>
+                                <li><a class="dropdown-item" href="{{ route('content.management') }}">Kelola Konten</a></li>
                                 @endif
                             </ul>
                         </li>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Content | Dashboard')
+@section('title', 'Content | Create')
 @section('content')
 @if ($errors->any)
 <div style="margin: auto; width: 700px; margin-bottom: 5%;">

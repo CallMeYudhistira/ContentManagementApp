@@ -63,4 +63,14 @@ class ContentController extends Controller
 
         return redirect()->route("content.index");
     }
+
+    public function show(){
+        $post = Post::query()->where('id_users', session()->get('userId'));
+        $category = Category::all();
+
+        return view("content.management",[
+            "post" => $post,
+            "category" => $category,
+        ]);
+    }
 }
