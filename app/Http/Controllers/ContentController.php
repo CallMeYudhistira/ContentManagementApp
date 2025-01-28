@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 
 class ContentController extends Controller
 {
     public function index(){
         $post = Post::all();
         $category = Category::all();
+        $users = User::all();
 
         return view("content.index", [
             "post" => $post,
             "category" => $category,
+            "users" => $users,
         ]);
     }
 
