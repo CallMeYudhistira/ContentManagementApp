@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Content | Dashboard')
 @section('content')
-    <div style="display: flex;">
+    <div style="display: flex; flex-wrap: wrap; justify-content:flex-start; width: 90%; margin: auto;">
         @foreach ($post as $posts)
-            <div class="card" style="width: 18rem; margin-right: 3%;;">
+            <div class="card" style="width: 19rem; height: auto; margin-right: 3%; max-width: 19rem; min-width: 18rem; margin-bottom: 3%;">
                 <img src="{{ asset('image/' . $posts->image) }}" class="card-img-top"
                     alt="{{ asset('image/' . $posts->image) }}">
                 <div class="card-body">
@@ -14,7 +14,7 @@
                         @php
                             foreach ($category as $cate) {
                                 if ($posts->id_category == $cate->id) {
-                                    echo $cate->category;
+                                    echo 'Category : ' . $cate->category;
                                 }
                             }
                         @endphp

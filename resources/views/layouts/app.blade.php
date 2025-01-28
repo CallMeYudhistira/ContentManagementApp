@@ -28,7 +28,7 @@
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="{{ route('content.index') }}">Lihat Konten</a></li>
                                 @if(session()->get('role') == 'admin')
-                                <li><a class="dropdown-item" href="#">Buat Konten</a></li>
+                                <li><a class="dropdown-item" href="{{ route('content.create') }}">Buat Konten</a></li>
                                 <li><a class="dropdown-item" href="#">Kelola Konten</a></li>
                                 @endif
                             </ul>
