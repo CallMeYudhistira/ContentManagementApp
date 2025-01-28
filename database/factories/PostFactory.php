@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,11 +17,13 @@ class PostFactory extends Factory
     public function definition(): array
     {
         $image = fake()->sentence(1);
+        $userRole = User::query()->where('role', 'admin');
+        $user = $userRole->get('id');
         return [
             'title' => fake()->sentence(1),
             'description' => fake()->sentence(5),
             'image' => $image . 'jpg',
-            'id_users' => fake()->randomElement([1,2,3,4,5]),
+            'id_users' => fake()->randomElement($user),
             'id_category' => fake()->randomElement([1,2,3,4,5]),
         ];
     }

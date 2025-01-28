@@ -66,10 +66,11 @@ class ContentController extends Controller
 
     public function show(){
         $post = Post::query()->where('id_users', session()->get('userId'));
+        $postAll = $post->get('*');
         $category = Category::all();
 
         return view("content.management",[
-            "post" => $post,
+            "post" => $postAll,
             "category" => $category,
         ]);
     }

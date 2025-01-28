@@ -13,9 +13,9 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($post as $posts)
+        @foreach ($post as $index => $posts)
             <tr>
-                <th scope="row">@php $i = 0; echo $i++; @endphp</th>
+                <th scope="row">{{ $index + 1 }}</th>
                 <td>{{ $posts->title }}</td>
                 <td>{{ $posts->description }}</td>
                 <td><img src="{{ asset('image/' . $posts->image) }}" alt="{{ asset('image/' . $posts->image) }}" width="400px"></td>
