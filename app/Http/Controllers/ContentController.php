@@ -77,4 +77,41 @@ class ContentController extends Controller
             "category" => $category,
         ]);
     }
+
+    public function edit($id){
+        $post = Post::all()->find($id);
+        $category = Category::all();
+
+        return view("content.update", [
+            'post' => $post,
+            'category' => $category,
+        ]);
+    }
+
+    public function update(Request $request, $id){
+        $payload = $request->all();
+
+        $post = Post::find($id);
+
+        if($request->hasFile("image")){
+            $image = $request->file("image");
+            $imageName = $post->image;
+            $image->move("image/", $imageName);
+            $post->image = $imageName;
+        }
+
+        $category = Category::all();
+        foreach($category as $cate){
+            if($cate->category == $payload['category']){
+                $id_category = $cate->id;
+            }
+        }
+
+        $post->title = $payload['title'];
+        $post->description = $payload['description'];
+        $post->$id_category;
+        $post->save();
+
+        return redirect()->route("content.index");
+    }
 }
