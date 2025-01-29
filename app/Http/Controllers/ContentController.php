@@ -141,4 +141,16 @@ class ContentController extends Controller
             "users" => $users,
         ]);
     }
+
+    public function category($id_category){
+        $post = Post::query()->where('id_category', 'like', '%' . $id_category . '%')->get('*');
+        $category = Category::all();
+        $users = User::all();
+
+        return view('content.index', [
+            "post" => $post, 
+            "category" => $category,
+            "users" => $users,
+        ]);
+    }
 }

@@ -33,4 +33,15 @@
             </div>
         @endforeach
     </div>
+    <div class="dropdown" style="margin-top: 1%; width: 90%; margin: auto; margin-bottom: 3%;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cari Berdasarkan Kategori
+        </button>
+        <ul class="dropdown-menu">
+            @foreach ($category as $cate)
+                <li><a class="dropdown-item" href="{{ route('content.category', $cate->id) }}">{{ $cate->category }}</a></li>
+            @endforeach
+        </ul>
+    </div>
+</div>
 @endsection
