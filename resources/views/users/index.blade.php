@@ -11,4 +11,9 @@
             {{ session()->get('error') }}!</p>
     @endif
     <h1 align="center">Hello, {{ session()->get('name') }}</h1>
+    @if (session()->get('role') == 'admin')
+        <p style="text-align: center; margin-top: 2%; scale: 1.1;">Kami Telah Menunggu Anda Untuk Membuat Konten Terbaru!</p>
+    @else
+        <p style="text-align: center; margin-top: 2%; scale: 1.1;">Ayo, Segera Lihatlah Konten Terbaru Yang Sudah Dipublikasikan!</p>
+    @endif
 @endsection

@@ -27,12 +27,12 @@ Route::controller(ContentController::class)->middleware(Authenticate::class)->pr
         Route::get("/create","create")->name("create");
         Route::get("/management", "show")->name("management");
         Route::get("/{id}/edit", "edit")->name("edit");
-        Route::get('/{id_category}', 'category')->name('category');
 
         Route::post("/", "store")->name("store");
-        Route::post("/search", "search")->name("search");
         Route::put("/{id}", "update")->name("update");
 
         Route::delete("/{id}", "destroy")->name("destroy");
     });
+    Route::post("/search", "search")->name("search");
+    Route::get('/{id_category}', 'category')->name('category');
 });
