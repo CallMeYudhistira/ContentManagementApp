@@ -35,7 +35,7 @@
                             <form action="{{ route('content.destroy', $posts->id) }}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirmDelete();">Hapus</button>
                             </form>
                         </td>
                     </tr>
@@ -43,4 +43,15 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        function confirmDelete() {
+            let konfir = confirm('Yakin Akan Menghapus?');
+            if(konfir){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
 @endsection
