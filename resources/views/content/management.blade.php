@@ -8,8 +8,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Image</th>
                     <th scope="col">Category</th>
+                    <th scope="col">Image</th>
                     <th scope="col" style="text-align: center">~</th>
                     <th scope="col" style="text-align: center">!</th>
                 </tr>
@@ -32,7 +32,9 @@
                         <td scope="row" style="text-align: center;"><button type="button" class="btn btn-warning"><a
                                     href="{{ route('content.edit', $posts->id) }}">Edit</a></button></td>
                         <td scope="row" style="text-align: center;">
-                            <form action="" method="POST">
+                            <form action="{{ route('content.destroy', $posts->id) }}" method="POST">
+                                @csrf
+                                @method("DELETE")
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                             </form>
                         </td>

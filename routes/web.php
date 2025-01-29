@@ -7,6 +7,10 @@ use App\Http\Middleware\HakAkses;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function(){
+    return redirect()->route('auth.loginPage');
+});
+
 Route::controller(AuthController::class)->prefix('auth')->name('auth.')->group(function(){
     Route::get("/login", "loginPage")->name('loginPage');
     Route::post("/login", "login")->name("login");

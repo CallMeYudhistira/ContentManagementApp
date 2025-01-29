@@ -109,8 +109,20 @@ class ContentController extends Controller
 
         $post->title = $payload['title'];
         $post->description = $payload['description'];
-        $post->$id_category;
+        $post->id_category = $id_category;
         $post->save();
+
+        return redirect()->route("content.index");
+    }
+
+    public function destroy($id){
+        $post = Post::find($id);
+
+        if(file_exists(public_path("image/" . $post->image)) && $post->image != "default.jpg"){
+            unlink(public_path("image/" . $post->image));
+        }
+
+        Post::destroy($id);
 
         return redirect()->route("content.index");
     }
