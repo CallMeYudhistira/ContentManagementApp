@@ -29,6 +29,7 @@ Route::controller(ContentController::class)->middleware(Authenticate::class)->pr
         Route::get("/{id}/edit", "edit")->name("edit");
     
         Route::post("/", "store")->name("store");
+        Route::post("/search", "search")->name("search");
         Route::put("/{id}", "update")->name("update");
     
         Route::delete("/{id}", "destroy")->name("destroy");

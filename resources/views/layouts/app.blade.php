@@ -47,8 +47,9 @@
                     </ul>
                 </div>
                 
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" action="{{ route('content.search') }}" method="POST">
+                    @csrf
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="cari" name="cari">
                     <button class="btn btn-primary" type="submit">Search</button>
                 </form>
             </div>

@@ -68,12 +68,11 @@ class ContentController extends Controller
     }
 
     public function show(){
-        $post = Post::query()->where('id_users', session()->get('userId'));
-        $postAll = $post->get('*');
+        $post = Post::query()->where('id_users', '=', session()->get('userId'))->get('*');
         $category = Category::all();
 
         return view("content.management",[
-            "post" => $postAll,
+            "post" => $post,
             "category" => $category,
         ]);
     }
@@ -125,5 +124,21 @@ class ContentController extends Controller
         Post::destroy($id);
 
         return redirect()->route("content.index");
+    }
+
+    public function search(Request $request){
+        $payload = $request->all();
+
+        $title = $payload['cari'];
+
+        $post = Post::query()->where('title', 'like', '%' . $title . '%')->get('*');
+        $category = Category::all();
+        $users = User::all();
+
+        return view('content.index', [
+            "post" => $post, 
+            "category" => $category,
+            "users" => $users,
+        ]);
     }
 }
