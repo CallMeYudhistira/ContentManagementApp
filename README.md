@@ -28,7 +28,7 @@ The application focuses purely on **content presentation**.
 - **MySQL**
 - **Blade Template Engine**
 - **Eloquent ORM**
-- **Tailwind CSS / Bootstrap** (optional)
+- **Bootstrap**
 
 ## Application Scope
 
