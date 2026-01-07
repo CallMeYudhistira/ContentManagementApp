@@ -1,4 +1,4 @@
-b# Content Management App (Laravel 11)
+# Content Management App (Laravel 11) 📱
 
 A web-based **Content Management Application** built using **Laravel 11** and **MySQL**.  
 This application is inspired by social media platforms but intentionally restricted to **content viewing only**.
